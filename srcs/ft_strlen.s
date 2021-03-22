@@ -5,7 +5,7 @@ global ft_strlen
 segment .text
 
 ft_strlen:
-	push rcx
+	push	rcx
 	mov	rcx, 0
 	jmp	count
 
@@ -16,6 +16,6 @@ count:
 	jmp	count
 
 exit:
-	mov rax, rcx
-	pop rcx
+	mov	rax, rcx
+	pop	rcx
 	ret

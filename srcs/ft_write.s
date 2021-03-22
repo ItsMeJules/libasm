@@ -13,13 +13,13 @@ ft_write:
 	ret
 
 error:
-	neg		rax ; as rax is negative I set it positive
+	neg	rax ; as rax is negative I set it positive
 	push	rcx	; saves previous rcx value into the stack
-	mov		rcx, rax ; saves rax into rcx because rax contains the error id which we have to set to errno
+	mov	rcx, rax ; saves rax into rcx because rax contains the error id which we have to set to errno
 	call	__errno_location wrt ..plt ; implicitly set errno's addres in rax
-	mov		[rax], rcx ; sets errno's returned value into 
-	pop		rcx ; retrives rcx's former value
-	mov		rax, -1 ; now sets the returned value to -1 because that's what write returns if there's an error
+	mov	[rax], rcx ; sets errno's returned value into 
+	pop	rcx ; retrives rcx's former value
+	mov	rax, -1 ; now sets the returned value to -1 because that's what write returns if there's an error
 	ret
 
 
