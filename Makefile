@@ -4,7 +4,7 @@ CC			= nasm
 AR			= ar
 RM			= rm -rf
 
-TESTCFLAGS	= -Wall -Werror -Wextra
+TESTCFLAGS	= -Wall -Werror -Wextra -fsanitize=address
 CFLAGS		= -f elf64
 ARFLAGS		= rcs
 

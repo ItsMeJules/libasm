@@ -9,7 +9,7 @@ ft_write:
 	mov	rax, 1 ; value for write in the kernel
 	syscall ; when calling write if there's an error it will be set in rax as a neg value
 	cmp	rax, 0
-	jl	error
+		jl	error
 	ret
 
 error:

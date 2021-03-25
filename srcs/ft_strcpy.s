@@ -8,14 +8,14 @@ ft_strcpy:
 	push	rcx
 	mov	rcx, 0
 	cmp	rsi, 0
-	je	exit
+		je	exit
 	jmp	copy
 
 copy:
 	mov	dl, BYTE [rsi + rcx]
 	mov	BYTE [rdi + rcx], dl
 	cmp	dl, 0
-	je	exit
+		je	exit
 	inc	rcx
 	jmp	copy
 
